@@ -6,6 +6,7 @@ import Score from "./components/Score";
 import "./App.css";
 import Typo from "./components/Error";
 import LostMsg from "./components/LostMsg";
+import data from "./data/words";
 
 export default function App() {
   const [gameStart, setGameStart] = useState(false);
@@ -16,19 +17,14 @@ export default function App() {
   const [score, setScore] = useState<number>(0);
   const [typoCount, setTypoCount] = useState<number>(0);
 
-  const fetchData = async () => {
-    const response = await fetch("https://api.api-ninjas.com/v2/randomword", {
-      headers: {
-        "X-API-Key": import.meta.env.VITE_API_KEY,
-      },
-    });
-    const data = await response.json();
-    setWord(data[0]);
+  const getData = () => {
+    const value = data[Math.floor(Math.random() * data.length)];
+    setWord(value);
   };
   return gameStart ? (
     <>
       <Button
-        fetchData={fetchData}
+        fetchData={getData}
         gameStart={gameStart}
         setGameStart={setGameStart}
         isLost={isLost}
@@ -41,7 +37,7 @@ export default function App() {
         word={word}
         score={score}
         setScore={setScore}
-        fetchData={fetchData}
+        fetchData={getData}
         setFlash={setFlash}
         setTypoFlash={setTypoFlash}
         typoCount={typoCount}
@@ -55,7 +51,7 @@ export default function App() {
   ) : (
     <>
       <Button
-        fetchData={fetchData}
+        fetchData={getData}
         gameStart={gameStart}
         setGameStart={setGameStart}
         isLost={isLost}
