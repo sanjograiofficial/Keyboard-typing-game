@@ -1,16 +1,40 @@
+import Score from "./Score";
+
 type PropType = {
   fetchData: () => Promise<void>;
-  onClick: () => void;
+  gameStart: boolean;
+  setGameStart: React.Dispatch<React.SetStateAction<boolean>>;
+  isLost: boolean;
+  setIsLost: React.Dispatch<React.SetStateAction<boolean>>;
+  score: number;
+  setScore: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export default function Button({ fetchData, onClick }: PropType) {
+export default function Button({
+  fetchData,
+  gameStart,
+  setGameStart,
+  isLost,
+  setIsLost,
+  score,
+  setScore,
+}: PropType) {
   const handleClick = async () => {
-    onClick();
+    setGameStart(true);
+    setScore(0);
+    setIsLost(false);
     await fetchData();
   };
-  return (
+  let gameOverMsg;
+  if (!gameStart) {
+    gameOverMsg = "Start Game";
+  }
+  if (isLost) {
+    gameOverMsg = "Try Again";
+  }
+  return gameStart ? null : (
     <button onClick={handleClick} className="start-btn">
-      Start Game
+      {gameOverMsg || (isLost && gameOverMsg + " Your Score: " + score)}
     </button>
   );
 }
