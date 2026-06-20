@@ -1,5 +1,3 @@
-import Score from "./Score";
-
 type PropType = {
   fetchData: () => void;
   gameStart: boolean;
