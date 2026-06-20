@@ -4,7 +4,7 @@ interface PropType {
   word: string;
   score: number;
   setScore: React.Dispatch<React.SetStateAction<number>>;
-  fetchData: () => Promise<void>;
+  fetchData: () => void;
   setFlash: React.Dispatch<React.SetStateAction<boolean>>;
   setTypoFlash: React.Dispatch<React.SetStateAction<boolean>>;
   typoCount: number;
