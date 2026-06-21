@@ -1,3 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  padding: 10px;
+  display: flex;
+}
+.gameBox {
+  margin: 0 auto;
+}
 .start-btn {
   padding: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -29,7 +41,7 @@
   padding: 10px;
 }
 .flash {
-  background-color: yellow;
+  background-color: green;
 }
 .red-flash {
   background-color: red;
