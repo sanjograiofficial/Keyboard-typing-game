@@ -1,28 +1,14 @@
 type PropType = {
-  fetchData: () => void;
+  handleClick: () => void;
   gameStart: boolean;
-  setGameStart: React.Dispatch<React.SetStateAction<boolean>>;
   isLost: boolean;
-  setIsLost: React.Dispatch<React.SetStateAction<boolean>>;
-  score: number;
-  setScore: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export default function Button({
-  fetchData,
+  handleClick,
   gameStart,
-  setGameStart,
   isLost,
-  setIsLost,
-  score,
-  setScore,
 }: PropType) {
-  const handleClick = () => {
-    setGameStart(true);
-    setScore(0);
-    setIsLost(false);
-    fetchData();
-  };
   let gameOverMsg;
   if (!gameStart) {
     gameOverMsg = "Start Game";
@@ -32,7 +18,7 @@ export default function Button({
   }
   return gameStart ? null : (
     <button onClick={handleClick} className="start-btn">
-      {gameOverMsg || (isLost && gameOverMsg + " Your Score: " + score)}
+      {gameOverMsg}
     </button>
   );
 }
