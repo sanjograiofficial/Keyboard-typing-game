@@ -21,16 +21,18 @@ export default function App() {
     const value = data[Math.floor(Math.random() * data.length)];
     setWord(value);
   };
+  const handleGameStart = () => {
+    setGameStart(true);
+    setScore(0);
+    setIsLost(false);
+    getData();
+  };
   return gameStart ? (
     <>
       <Button
-        fetchData={getData}
         gameStart={gameStart}
-        setGameStart={setGameStart}
         isLost={isLost}
-        setIsLost={setIsLost}
-        score={score}
-        setScore={setScore}
+        handleClick={handleGameStart}
       />
       <Word word={word} />
       <InputField
@@ -51,13 +53,9 @@ export default function App() {
   ) : (
     <>
       <Button
-        fetchData={getData}
         gameStart={gameStart}
-        setGameStart={setGameStart}
         isLost={isLost}
-        setIsLost={setIsLost}
-        score={score}
-        setScore={setScore}
+        handleClick={handleGameStart}
       />
       <LostMsg score={score} />
     </>
