@@ -37,8 +37,8 @@ A simple browser-based typing game built with TypeScript/React where users type 
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/keyboard-game.git
-cd keyboard-game
+git clone https://github.com/sanjograiofficial/Keyboard-typing-game.git
+cd Keyboard-typing-game
 npm install
 npm run dev
 ```
