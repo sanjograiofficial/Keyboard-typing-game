@@ -16,8 +16,8 @@ Click the **Fork** button on GitHub to create your own copy of the project.
 ### 2. Clone your fork
 
 ```bash
-git clone https://github.com/your-username/keyboard-game.git
-cd keyboard-game
+git clone https://github.com/sanjograiofficial/Keyboard-typing-game.git
+cd Keyboard-typing-game
 ```
 
 ### 3. Create a new branch
@@ -25,7 +25,7 @@ cd keyboard-game
 Always create a separate branch for your feature or fix:
 
 ```bash
-git checkout -b feature-name
+git switch -c feature-name
 ```
 
 Examples:
