@@ -2,6 +2,7 @@ import Button from "./Button";
 import Typo from "./Error";
 import InputField from "./InputField";
 import Score from "./Score";
+import Timer from "./Timer";
 import Word from "./Word";
 
 interface PropType {
@@ -40,6 +41,7 @@ export default function GameStart({
 }: PropType) {
   return (
     <div className="gameBox">
+      <Timer setGameStart={setGameStart} />
       <Button
         gameStart={gameStart}
         isLost={isLost}

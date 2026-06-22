@@ -46,3 +46,13 @@
 .red-flash {
   background-color: red;
 }
+.gameBox {
+}
+.timer {
+  padding: 10px;
+  font-size: 50px;
+  display: flex;
+}
+.timer .time {
+  margin: 0 auto;
+}
