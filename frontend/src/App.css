@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  padding: 10px;
+  display: flex;
+}
+.gameBox {
+  margin: 0 auto;
+}
+.start-btn {
+  padding: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: gray;
+  border: none;
+  transform: translate(4px, -4px);
+  box-shadow: -4px 4px;
+}
+.start-btn:active {
+  transform: translate(0px, 0px);
+  box-shadow: 0px 0px;
+}
+.challenge {
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px;
+}
+.input {
+  font-size: large;
+  padding: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+.input:focus {
+  background-color: #c2c2c2;
+}
+.score {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+}
+.flash {
+  background-color: green;
+}
+.red-flash {
+  background-color: red;
+}
+.gameBox {
+}
+.timer {
+  padding: 10px;
+  font-size: 50px;
+  display: flex;
+}
+.timer .time {
+  margin: 0 auto;
+}
