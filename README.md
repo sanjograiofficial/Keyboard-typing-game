@@ -1,6 +1,6 @@
 # ⌨️ Keyboard Typing Game
 
-A simple browser-based typing game built with TypeScript/React where users type random words generated from local data file. The goal is to improve typing speed and accuracy.
+A browser-based typing game built with React and TypeScript where players race against a timer by typing randomly generated words as quickly and accurately as possible.
 
 ---
 
@@ -11,6 +11,16 @@ A simple browser-based typing game built with TypeScript/React where users type 
 - Simple and clean UI
 - Keyboard-based interaction
 - Lightweight and fast
+- 1-minute competitive mode
+
+### Roadmap
+
+- [ ] Leaderboards
+- [ ] Multiple timer durations
+- [ ] Free typing mode
+- [ ] WPM calculation
+- [ ] Accuracy tracking
+- [ ] Improved UI/UX
 
 ---
 
@@ -27,10 +37,28 @@ A simple browser-based typing game built with TypeScript/React where users type 
 
 ## Tech Stack
 
+### Frontend
+
 - React
-- TypeScript (optional)
-- Local data file containing a lot of english words
+- TypeScript
+- Local word dataset for random word generation
 - CSS for styling
+
+### Backend
+
+- Node.js
+- Express
+- TypeScript
+- Postgres with Prisma
+- Podman desktop
+
+---
+
+## Prerequisites
+
+- Node.js
+- Podman Desktop
+- PostgreSQL container support
 
 ---
 
@@ -39,6 +67,51 @@ A simple browser-based typing game built with TypeScript/React where users type 
 ```bash
 git clone https://github.com/sanjograiofficial/Keyboard-typing-game.git
 cd Keyboard-typing-game
+cd backend
+npm install
+```
+
+### Environment Variables
+
+`Create a file named ".env"`
+
+Inside ".env":
+
+```bash
+PORT=port_number
+POSTGRES_USER=username
+POSTGRES_DB=database_name
+POSTGRES_PASSWORD=password
+POSTGRES_HOST=localhost
+POSTGRES_PORT=port_number
+
+DATABASE_URL="postgresql://username:password@localhost:5432/database_name?schema=public"
+```
+
+Open Terminal and run:
+
+```bash
+podman compose up
+```
+
+After that, run:
+
+```bash
+npx prisma migrate dev --name init
+npx prisma generate
+```
+
+And then, start the server:
+
+```bash
+npm run dev
+```
+
+Finally, run the frontend:
+
+```bash
+cd ..
+cd frontend
 npm install
 npm run dev
 ```
