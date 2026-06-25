@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { createRecord } from "../api/leaderboards";
 import Button from "./Button";
 import LostMsg from "./LostMsg";
 
@@ -6,6 +8,7 @@ interface PropType {
   isLost: boolean;
   handleGameStart: () => void;
   score: number;
+  name: string;
 }
 
 export default function GameOver({
@@ -13,7 +16,15 @@ export default function GameOver({
   isLost,
   handleGameStart,
   score,
+  name,
 }: PropType) {
+  const hasSubmitted = useRef(false);
+  useEffect(() => {
+    if (!isLost || hasSubmitted.current) return;
+    hasSubmitted.current = true;
+    createRecord({ name, score });
+  }, [isLost, name, score]);
+
   return (
     <div className="gameBox">
       <Button

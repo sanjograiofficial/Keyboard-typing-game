@@ -74,6 +74,8 @@ npm install
 
 ### Environment Variables
 
+For backend:
+
 `Create a file named ".env"`
 
 Inside ".env":
@@ -109,7 +111,14 @@ And then, start the server:
 npm run dev
 ```
 
-Finally, run the frontend:
+Finally, the frontend:
+`Create a file named ".env"`
+
+Inside ".env":
+
+```bash
+VITE_BACKEND_PORT=server_port_number
+```
 
 ```bash
 cd ..

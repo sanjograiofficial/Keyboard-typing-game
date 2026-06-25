@@ -5,6 +5,7 @@ import GameOver from "./components/GameOver";
 import "./App.css";
 
 export default function App() {
+  const [name, setName] = useState("");
   const [gameStart, setGameStart] = useState(false);
   const [isLost, setIsLost] = useState(false);
   const [word, setWord] = useState<string>("");
@@ -42,6 +43,8 @@ export default function App() {
           setGameStart={setGameStart}
           flash={flash}
           typoFlash={typoFlash}
+          name={name}
+          setName={setName}
         />
       ) : (
         <GameOver
@@ -49,6 +52,7 @@ export default function App() {
           isLost={isLost}
           score={score}
           handleGameStart={handleGameStart}
+          name={name}
         />
       )}
     </div>

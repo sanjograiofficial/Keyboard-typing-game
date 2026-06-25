@@ -62,6 +62,7 @@ export default function InputField({
   return (
     <input
       type="text"
+      autoFocus
       className="input"
       value={ans}
       onChange={(e) => handleChange(e)}
