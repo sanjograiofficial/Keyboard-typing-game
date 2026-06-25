@@ -1,6 +1,7 @@
 import Button from "./Button";
 import Typo from "./Error";
 import InputField from "./InputField";
+import Name from "./Name";
 import Score from "./Score";
 import Timer from "./Timer";
 import Word from "./Word";
@@ -21,6 +22,8 @@ interface PropType {
   setGameStart: React.Dispatch<React.SetStateAction<boolean>>;
   flash: boolean;
   typoFlash: boolean;
+  name: string;
+  setName: React.Dispatch<React.SetStateAction<string>>;
 }
 export default function GameStart({
   gameStart,
@@ -38,30 +41,34 @@ export default function GameStart({
   setGameStart,
   flash,
   typoFlash,
+  name,
+  setName,
 }: PropType) {
-  return (
-    <div className="gameBox">
-      <Timer setGameStart={setGameStart} />
-      <Button
-        gameStart={gameStart}
-        isLost={isLost}
-        handleClick={handleGameStart}
-      />
-      <Word word={word} />
-      <InputField
-        word={word}
-        score={score}
-        setScore={setScore}
-        fetchData={getData}
-        setFlash={setFlash}
-        setTypoFlash={setTypoFlash}
-        typoCount={typoCount}
-        setTypoCount={setTypoCount}
-        setIsLost={setIsLost}
-        setGameStart={setGameStart}
-      />
-      <Score score={score} flash={flash} />
-      <Typo typoCount={typoCount} typoFlash={typoFlash} />
-    </div>
-  );
+  if (name !== "")
+    return (
+      <div className="gameBox">
+        <Timer setGameStart={setGameStart} />
+        <Button
+          gameStart={gameStart}
+          isLost={isLost}
+          handleClick={handleGameStart}
+        />
+        <Word word={word} />
+        <InputField
+          word={word}
+          score={score}
+          setScore={setScore}
+          fetchData={getData}
+          setFlash={setFlash}
+          setTypoFlash={setTypoFlash}
+          typoCount={typoCount}
+          setTypoCount={setTypoCount}
+          setIsLost={setIsLost}
+          setGameStart={setGameStart}
+        />
+        <Score score={score} flash={flash} />
+        <Typo typoCount={typoCount} typoFlash={typoFlash} />
+      </div>
+    );
+  else return <Name name={name} setName={setName} />;
 }
