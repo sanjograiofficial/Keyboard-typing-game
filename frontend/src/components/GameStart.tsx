@@ -70,5 +70,5 @@ export default function GameStart({
         <Typo typoCount={typoCount} typoFlash={typoFlash} />
       </div>
     );
-  else return <Name name={name} setName={setName} />;
+  else return <Name setName={setName} />;
 }

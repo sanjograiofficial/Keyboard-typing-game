@@ -1,11 +1,10 @@
 import { useState } from "react";
 
 interface PropType {
-  name: string;
   setName: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Name({ name, setName }: PropType) {
+export default function Name({ setName }: PropType) {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
   const handleClick = () => {
