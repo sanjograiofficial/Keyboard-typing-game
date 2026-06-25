@@ -1,7 +1,7 @@
 import { useState } from "react";
 import data from "./data/words";
 import GameStart from "./components/GameStart";
-import GameLost from "./components/GameLost";
+import GameOver from "./components/GameOver";
 import "./App.css";
 
 export default function App() {
@@ -44,7 +44,7 @@ export default function App() {
           typoFlash={typoFlash}
         />
       ) : (
-        <GameLost
+        <GameOver
           gameStart={gameStart}
           isLost={isLost}
           score={score}

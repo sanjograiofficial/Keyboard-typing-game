@@ -8,7 +8,7 @@ interface PropType {
   score: number;
 }
 
-export default function GameLost({
+export default function GameOver({
   gameStart,
   isLost,
   handleGameStart,

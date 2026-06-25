@@ -6,7 +6,7 @@ import routes from "./routes/routes.js";
 import cors from "cors";
 
 let port = process.env.PORT;
-let frontendPort = process.env.FRONTENDPORT;
+let frontendPort = process.env.FRONTEND_PORT;
 const app = express();
 app.use(express.json());
 app.use(

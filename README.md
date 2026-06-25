@@ -51,6 +51,7 @@ A browser-based typing game built with React and TypeScript where players race a
 - TypeScript
 - Postgres with Prisma
 - Podman desktop
+- Cors
 
 ---
 
@@ -79,6 +80,7 @@ Inside ".env":
 
 ```bash
 PORT=port_number
+FRONTEND_PORT=your_react_port_number
 POSTGRES_USER=username
 POSTGRES_DB=database_name
 POSTGRES_PASSWORD=password
