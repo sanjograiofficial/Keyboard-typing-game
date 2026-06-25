@@ -1,8 +1,16 @@
-import type { Request, Response } from "express";
 import prisma from "../db/prisma.js";
 
 const fetchLeaderBoardsService = async () => {
   return await prisma.users.findMany();
 };
 
-export { fetchLeaderBoardsService };
+const createRecordService = async (name: string, score: number) => {
+  return await prisma.users.create({
+    data: {
+      name,
+      score,
+    },
+  });
+};
+
+export { fetchLeaderBoardsService, createRecordService };
