@@ -4,11 +4,7 @@ type PropType = {
   isLost: boolean;
 };
 
-export default function Button({
-  handleClick,
-  gameStart,
-  isLost,
-}: PropType) {
+export default function Button({ handleClick, gameStart, isLost }: PropType) {
   let gameOverMsg;
   if (!gameStart) {
     gameOverMsg = "Start Game";
@@ -17,7 +13,10 @@ export default function Button({
     gameOverMsg = "Try Again";
   }
   return gameStart ? null : (
-    <button onClick={handleClick} className="start-btn">
+    <button
+      onClick={handleClick}
+      className="p-3 bg-gray-500 rounded-xl border-none start-btn"
+    >
       {gameOverMsg}
     </button>
   );

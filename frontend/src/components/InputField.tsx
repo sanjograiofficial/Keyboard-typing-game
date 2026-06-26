@@ -63,7 +63,7 @@ export default function InputField({
     <input
       type="text"
       autoFocus
-      className="input"
+      className="text-xl p-[10px] input border-4"
       value={ans}
       onChange={(e) => handleChange(e)}
     />

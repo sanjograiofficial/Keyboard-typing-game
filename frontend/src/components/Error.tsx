@@ -5,6 +5,8 @@ interface PropType {
 
 export default function Typo({ typoCount, typoFlash }: PropType) {
   return (
-    <div className={typoFlash ? "red-flash typo" : "typo"}>Mistake: {typoCount}</div>
+    <div className={typoFlash ? "text-red-600 score" : "score"}>
+      Mistake: {typoCount}
+    </div>
   );
 }

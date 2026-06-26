@@ -3,7 +3,7 @@ import data from "./data/words";
 import GameStart from "./components/GameStart";
 import GameOver from "./components/GameOver";
 import "./App.css";
-
+import './index.css'
 export default function App() {
   const [name, setName] = useState("");
   const [gameStart, setGameStart] = useState(false);
@@ -25,7 +25,7 @@ export default function App() {
     getData();
   };
   return (
-    <div className="container">
+    <div className="flex justify-center items-center h-screen w-screen">
       {gameStart ? (
         <GameStart
           gameStart={gameStart}

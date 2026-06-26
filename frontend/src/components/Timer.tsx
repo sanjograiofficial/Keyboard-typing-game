@@ -28,8 +28,8 @@ export default function Timer({ setGameStart }: PropType) {
   }, [min, sec]);
 
   return (
-    <div className="timer">
-      <div className="time">
+    <div className="p-[10px] text-[50px] flex">
+      <div className="mx-auto">
         {min.toString().padStart(2, "0")}:{sec.toString().padStart(2, "0")}
       </div>
     </div>

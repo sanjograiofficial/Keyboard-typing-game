@@ -4,7 +4,7 @@ interface PropType {
 export default function LostMsg({ score }: PropType) {
   return (
     <>
-      <div className="lost-msg">Your Score: {score}</div>
+      <div className="py-[10px]">Your Score: {score}</div>
     </>
   );
 }

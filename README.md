@@ -42,7 +42,7 @@ A browser-based typing game built with React and TypeScript where players race a
 - React
 - TypeScript
 - Local word dataset for random word generation
-- CSS for styling
+- CSS and TailwindCSS for styling
 
 ### Backend
 

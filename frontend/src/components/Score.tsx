@@ -4,5 +4,9 @@ interface PropType {
 }
 
 export default function Score({ score, flash }: PropType) {
-  return <div className={flash ? "flash score" : "score"}>Score: {score}</div>;
+  return (
+    <div className={flash ? "text-green-600 score" : "score"}>
+      Score: {score}
+    </div>
+  );
 }

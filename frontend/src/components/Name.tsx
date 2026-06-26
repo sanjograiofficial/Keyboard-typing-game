@@ -12,22 +12,25 @@ export default function Name({ setName }: PropType) {
     setName(inputValue);
   };
   return (
-    <div className="nameContainer">
+    <div className="flex flex-col justify-center items-center h-screen w-screen">
       <h1>Enter your name: </h1>
       <input
         type="text"
         autoFocus
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        className="nameInput"
+        className="text-xl p-[10px] w-[40vw] border-4 input"
         onKeyDown={(e) => {
           if (e.key == "Enter") handleClick();
         }}
       />
-      <button onSubmit={handleClick} className="nameSubmit">
+      <button
+        onClick={handleClick}
+        className="text-xl p-[10px] w-[40vw] border-4 bg-gray-500 start-btn"
+      >
         Confirm
       </button>
-      {error && <div className="emptyName">{error}</div>}
+      {error && <div className="text-red-500 py-3">Enter a valid name</div>}
     </div>
   );
 }

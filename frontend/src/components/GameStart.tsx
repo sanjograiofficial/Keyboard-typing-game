@@ -46,7 +46,7 @@ export default function GameStart({
 }: PropType) {
   if (name !== "")
     return (
-      <div className="gameBox">
+      <div className="mx-auto">
         <Timer setGameStart={setGameStart} />
         <Button
           gameStart={gameStart}
