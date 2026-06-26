@@ -5,7 +5,7 @@ type PropType = {
 export default function Word({ word }: PropType) {
   return (
     <>
-      <div className="challenge">Word: {word}</div>
+      <div className="text-xl p-[10px] challenge">Word: {word}</div>
     </>
   );
 }
