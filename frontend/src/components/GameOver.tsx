@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createRecord } from "../api/leaderboards";
 import Button from "./Button";
 import LostMsg from "./LostMsg";
+import LeaderBoards from "./LeaderBoards";
 
 interface PropType {
   gameStart: boolean;
@@ -18,9 +19,13 @@ export default function GameOver({
   score,
   name,
 }: PropType) {
+  const [showLeaderBoard, setShowLeaderBoard] = useState(false);
   const hasSubmitted = useRef(false);
   useEffect(() => {
-    if (!isLost || hasSubmitted.current) return;
+    if (!isLost || hasSubmitted.current) {
+      return;
+    }
+    setShowLeaderBoard(true);
     hasSubmitted.current = true;
     createRecord({ name, score });
   }, [isLost, name, score]);
@@ -33,6 +38,9 @@ export default function GameOver({
         handleClick={handleGameStart}
       />
       <LostMsg score={score} />
+      {showLeaderBoard && (
+        <LeaderBoards setShowLeaderBoard={setShowLeaderBoard} />
+      )}
     </div>
   );
 }
