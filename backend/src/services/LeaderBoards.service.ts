@@ -3,6 +3,7 @@ import prisma from "../db/prisma.js";
 const fetchLeaderBoardsService = async () => {
   return await prisma.users.findMany({
     orderBy: { score: "desc" },
+    take: 10,
   });
 };
 
