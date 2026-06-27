@@ -1,10 +1,11 @@
 import { useEffect, useState, type SetStateAction } from "react";
 
 interface PropType {
+  setIsLost: React.Dispatch<React.SetStateAction<boolean>>;
   setGameStart: React.Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Timer({ setGameStart }: PropType) {
+export default function Timer({ setIsLost, setGameStart }: PropType) {
   const [min, setMin] = useState(1);
   const [sec, setSec] = useState(0);
 
@@ -26,7 +27,8 @@ export default function Timer({ setGameStart }: PropType) {
 
     return () => clearInterval(interval);
   }, [min, sec]);
-
+  if (min == 0 && sec == 0) setIsLost(true);
+  
   return (
     <div className="p-[10px] text-[50px] flex">
       <div className="mx-auto">
