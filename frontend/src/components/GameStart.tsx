@@ -47,7 +47,7 @@ export default function GameStart({
   if (name !== "")
     return (
       <div className="mx-auto">
-        <Timer setGameStart={setGameStart} />
+        <Timer setIsLost={setIsLost} setGameStart={setGameStart} />
         <Button
           gameStart={gameStart}
           isLost={isLost}
