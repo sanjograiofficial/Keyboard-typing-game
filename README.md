@@ -12,10 +12,10 @@ A browser-based typing game built with React and TypeScript where players race a
 - Keyboard-based interaction
 - Lightweight and fast
 - 1-minute competitive mode
+- Leaderboard
 
 ### Roadmap
 
-- [ ] Leaderboards
 - [ ] Multiple timer durations
 - [ ] Free typing mode
 - [ ] WPM calculation
@@ -26,12 +26,23 @@ A browser-based typing game built with React and TypeScript where players race a
 
 ## How It Works
 
+### One minute game mode:
+
+- The user gets one minute to score the highest score they can.
+
 1. A random word is displayed on the screen.
 2. The user types the word using the keyboard.
-3. When the correct word is typed:
+3. When the correct letters are typed in correct order:
    - The game automatically moves to the next word.
+   - Score increases by 1.
    - Input is cleared.
-4. The process repeats continuously.
+4. When an incorrect letter is typed:
+   - The mistake increases by 1.
+   - Input is cleared and the user has to type the word from the start.
+5. After 3 mistakes, the user gets one last chance. If the user makes a mistake again, it's `Game Over`.
+6. In the "Game Over" screen, the leaderboard is shown of the top 10 scores.
+7. Then the user can "try again" to get a higher score.
+8. The process repeats continuously.
 
 ---
 
