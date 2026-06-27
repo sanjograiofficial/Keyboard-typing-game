@@ -3,7 +3,7 @@ import data from "./data/words";
 import GameStart from "./components/GameStart";
 import GameOver from "./components/GameOver";
 import "./App.css";
-import './index.css'
+import "./index.css";
 export default function App() {
   const [name, setName] = useState("");
   const [gameStart, setGameStart] = useState(false);
