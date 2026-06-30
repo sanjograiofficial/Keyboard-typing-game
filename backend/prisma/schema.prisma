@@ -12,9 +12,23 @@ datasource db {
   provider = "postgresql"
 }
 
-model Users {
+model Player {
   id        Int      @id @default(autoincrement())
   name      String
   score     Int
   createdAt DateTime @default(now())
+
+  @@map("player")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String
+  email     String   @unique
+  password  String
+  role      String   @default("user")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("user")
 }
