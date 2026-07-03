@@ -12,7 +12,7 @@ interface AuthUser {
 
 const secretKey = process.env.SECRET_KEY;
 if (!secretKey) throw new Error("Secret key is missing");
-const authMiddleware = asyncHandler(
+export const authMiddleware = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
     if (!authHeader) {
