@@ -5,7 +5,6 @@ const getLeaderBoards = async () => {
   const response = await fetch(url, {
     method: "GET",
   });
-  console.log(backendURL);
   return response.json();
 };
 
