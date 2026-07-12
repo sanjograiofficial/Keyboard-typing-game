@@ -1,6 +1,6 @@
-const backendPORT = import.meta.env.VITE_BACKEND_PORT;
+const backendURL = import.meta.env.VITE_API_URL;
 
-const url = `http://localhost:${backendPORT}/leaderboards`;
+const url = `${backendURL}/leaderboards`;
 const getLeaderBoards = async () => {
   const response = await fetch(url, {
     method: "GET",

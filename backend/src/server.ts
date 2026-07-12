@@ -11,7 +11,8 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: `http://localhost:${frontendPort}`,
+    // origin: `http://localhost:${frontendPort}`,
+    origin: `https://typing-game-qver.vercel.app/`,
   }),
 );
 
