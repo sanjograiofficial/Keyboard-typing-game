@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(
   cors({
     // origin: `http://localhost:${frontendPort}`,
-    origin: `https://typing-game-qver.vercel.app/`,
+    origin: `https://typing-game-ayp3jfej1-sanjograiofficials-projects.vercel.app`,
   }),
 );
 
