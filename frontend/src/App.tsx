@@ -15,8 +15,10 @@ export default function App() {
   const [typoCount, setTypoCount] = useState<number>(0);
 
   const getData = () => {
+  console.log(backendURL);
     const value = data[Math.floor(Math.random() * data.length)];
     setWord(value);
+    
   };
   const handleGameStart = () => {
     setGameStart(true);
