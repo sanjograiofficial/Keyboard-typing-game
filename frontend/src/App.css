@@ -1,8 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 .start-btn {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   transform: translate(4px, -4px);

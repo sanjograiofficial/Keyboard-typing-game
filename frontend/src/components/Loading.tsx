@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
     <>
-      <div className="text-xl bg-black">Loading...</div>
+      <div className="text-xl bg-black stroke-blue-400">Loading...</div>
     </>
   );
 }

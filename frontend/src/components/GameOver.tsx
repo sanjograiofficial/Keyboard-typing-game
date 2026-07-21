@@ -31,7 +31,7 @@ export default function GameOver({
   }, [isLost, name, score]);
 
   return (
-    <div className="gameBox">
+    <div className="">
       <Button
         gameStart={gameStart}
         isLost={isLost}
@@ -39,7 +39,7 @@ export default function GameOver({
       />
       <LostMsg score={score} />
       {showLeaderBoard && (
-        <LeaderBoards setShowLeaderBoard={setShowLeaderBoard} />
+          <LeaderBoards setShowLeaderBoard={setShowLeaderBoard} />
       )}
     </div>
   );

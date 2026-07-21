@@ -36,7 +36,7 @@ export default function LeaderBoards({ setShowLeaderBoard }: PropType) {
         <Loading />
       ) : (
         <div className="absolute inset-0 z-10 flex justify-center bg-black/80">
-          <table className="w-full h-1 border-collapse border border-gray-300 bg-white/60">
+          <table className="w-[10rem] h-1 border-collapse border border-gray-300 bg-white/60">
             <thead>
               <tr className="border-4">
                 <th className="border border-gray-300 p-2">Rank</th>
